@@ -120,7 +120,7 @@ const Index = () => {
           <h4 className="text-2xl font-bold text-gray-800 mb-6">Agradecimientos Especiales</h4>
           <p className="text-lg text-gray-600 leading-relaxed mb-4">
             Este acto de amor y generosidad no habría sido posible sin la iniciativa y visión de{" "}
-            <span className="font-semibold text-red-500">Reyes Ruiz</span>, 
+            <span className="font-semibold text-red-500">Roman Reyes Ruiz</span>, 
             quien tuvo la idea de llevar alimento y esperanza a quienes más lo necesitan. 
             Su empatía y liderazgo nos inspiran a seguir construyendo una comunidad más solidaria.
           </p>
