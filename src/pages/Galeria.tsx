@@ -7,25 +7,37 @@ const Galeria = () => {
   const photos = [
     {
       id: 1,
-      src: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=800&h=600&fit=crop",
-      alt: "Paciente recibiendo comida con una sonrisa",
+      src: "/img6.jpg",
+      alt: "Preparando una comida casera",
       caption: "La alegría en sus ojos al recibir una comida casera es indescriptible"
     },
     {
       id: 2,
-      src: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop",
+      src: "/img1.jpg",
       alt: "Voluntaria preparando comidas",
       caption: "Cada plato es preparado con dedicación y amor"
     },
     {
       id: 3,
-      src: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=600&fit=crop",
+      src: "/img2.jpg",
       alt: "Equipo de voluntarios organizando las entregas",
       caption: "Juntos coordinamos para llegar a más personas"
     },
     {
       id: 4,
-      src: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=800&h=600&fit=crop",
+      src: "/img3.jpg",
+      alt: "Momento de entrega en el hospital",
+      caption: "Creando momentos especiales en medio del dolor"
+    },
+    {
+      id: 5,
+      src: "/img4.jpg",
+      alt: "Momento de entrega en el hospital",
+      caption: "Creando momentos especiales en medio del dolor"
+    },
+    {
+      id: 6,
+      src: "/img5.jpg",
       alt: "Momento de entrega en el hospital",
       caption: "Creando momentos especiales en medio del dolor"
     }

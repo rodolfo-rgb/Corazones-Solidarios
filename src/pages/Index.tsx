@@ -2,8 +2,11 @@ import { Heart, Users, BookOpen } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import ParticipationForm from "@/components/ParticipationForm";
 
 const Index = () => {
+  const [showForm, setShowForm] = useState(false);
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-red-50">
       {/* Header */}
@@ -106,12 +109,34 @@ const Index = () => {
               Tu participación puede marcar la diferencia en la vida de alguien. 
               Juntos podemos llevar más sonrisas, más esperanza y más amor a quienes lo necesitan.
             </p>
-            <Button className="bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white px-8 py-3 text-lg">
+            <Button 
+              className="bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white px-8 py-3 text-lg"
+              onClick={() => setShowForm(true)}
+            >
               Quiero Participar
             </Button>
           </div>
         </div>
       </section>
+
+            {/* Special Thanks Section */}
+      <section className="py-12 px-4 bg-white/70 backdrop-blur-sm">
+        <div className="container mx-auto text-center max-w-3xl">
+          <h4 className="text-2xl font-bold text-gray-800 mb-6">Agradecimientos Especiales</h4>
+          <p className="text-lg text-gray-600 leading-relaxed mb-4">
+            Este acto de amor y generosidad no habría sido posible sin la iniciativa y visión de{" "}
+            <span className="font-semibold text-red-500">Reyes Ruiz</span>, 
+            quien tuvo la idea de llevar alimento y esperanza a quienes más lo necesitan. 
+            Su empatía y liderazgo nos inspiran a seguir construyendo una comunidad más solidaria.
+          </p>
+          <p className="text-lg text-gray-600 leading-relaxed">
+            También extendemos un sincero agradecimiento a{" "}
+            <span className="font-semibold text-red-500">Jessica Hernandez Hernandez</span>, 
+            por su compromiso, creatividad y dedicación al desarrollo de este proyecto. 
+          </p>
+        </div>
+      </section>
+
 
       {/* Footer */}
       <footer className="bg-gray-800 text-white py-8 px-4">
@@ -125,6 +150,7 @@ const Index = () => {
           </p>
         </div>
       </footer>
+      <ParticipationForm open={showForm} onOpenChange={setShowForm} />
     </div>
   );
 };
