@@ -4,42 +4,42 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 const Galeria = () => {
-  const photos = [
+ const photos = [
     {
       id: 1,
       src: "/img6.jpg",
       alt: "Preparando una comida casera",
-      caption: "La alegría en sus ojos al recibir una comida casera es indescriptible"
+      caption: "Preparando con amor la comida que dará fuerza a quienes esperan afuera del hospital."
     },
     {
       id: 2,
       src: "/img1.jpg",
       alt: "Voluntaria preparando comidas",
-      caption: "Cada plato es preparado con dedicación y amor"
+      caption: "Cada comida es un gesto de apoyo para las personas que aguardan noticias de sus seres queridos."
     },
     {
       id: 3,
       src: "/img2.jpg",
       alt: "Equipo de voluntarios organizando las entregas",
-      caption: "Juntos coordinamos para llegar a más personas"
+      caption: "Coordinamos con cariño para llevar alimento a quienes permanecen en espera fuera de urgencias."
     },
     {
       id: 4,
       src: "/img3.jpg",
-      alt: "Momento de entrega en el hospital",
-      caption: "Creando momentos especiales en medio del dolor"
+      alt: "Entrega de comida a personas en espera",
+      caption: "Un momento de alivio y esperanza para quienes cuidan y acompañan a sus familiares hospitalizados."
     },
     {
       id: 5,
       src: "/img4.jpg",
-      alt: "Momento de entrega en el hospital",
-      caption: "Creando momentos especiales en medio del dolor"
+      alt: "Entrega de comida a personas en espera",
+      caption: "Compartiendo alimento y calidez con quienes atraviesan momentos de incertidumbre."
     },
     {
       id: 6,
       src: "/img5.jpg",
-      alt: "Momento de entrega en el hospital",
-      caption: "Creando momentos especiales en medio del dolor"
+      alt: "Entrega de comida a personas en espera",
+      caption: "Cada entrega lleva un mensaje: no están solos en esta espera."
     }
   ];
 

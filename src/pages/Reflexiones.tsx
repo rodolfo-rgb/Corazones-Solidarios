@@ -7,32 +7,32 @@ const Reflexiones = () => {
   const reflections = [
     {
       id: 1,
-      title: "El Poder Sanador de la Comida Casera",
-      content: "Hay algo mágico en una comida preparada en casa. No es solo la combinación de ingredientes, sino el amor que se infunde en cada paso del proceso. Cuando llevamos estas comidas a los hospitales, llevamos un pedacito de hogar, un recuerdo de que más allá de las paredes blancas y el olor a desinfectante, existe un mundo lleno de cariño esperándolos.",
+      title: "El Consuelo de un Plato Caliente",
+      content: "Llevar comida a quienes esperan afuera de los hospitales es más que alimentar el cuerpo; es brindar consuelo, calidez y esperanza en medio de la incertidumbre que viven al cuidar a sus seres queridos en urgencias.",
       author: "Reflexión colectiva"
     },
     {
       id: 2,
-      title: "Cuando el Dar se Convierte en Recibir",
-      content: "Cada vez que entregamos una comida, pensamos que somos nosotros quienes damos. Pero la verdad es que recibimos mucho más de lo que ofrecemos. Recibimos sonrisas que iluminan nuestro día, palabras de agradecimiento que tocan nuestro corazón, y la profunda satisfacción de saber que hemos hecho una diferencia en la vida de alguien.",
+      title: "Dar Comida, Recibir Gratitud",
+      content: "Cada entrega de alimento nos recuerda que el acto de dar se convierte en un lazo de humanidad. Las sonrisas y palabras de agradecimiento de quienes esperan nos llenan el alma y nos motivan a seguir apoyando.",
       author: "Testimonio de voluntario"
     },
     {
       id: 3,
-      title: "La Dignidad en los Pequeños Gestos",
-      content: "Un hospital puede ser un lugar donde las personas se sienten vulnerables y despojadas de su identidad. Pero cuando llegamos con una comida preparada especialmente para ellos, les devolvemos un poco de esa dignidad. Les recordamos que son importantes, que merecen cuidado, y que hay personas que piensan en su bienestar.",
+      title: "La Dignidad en el Cuidado",
+      content: "Acompañar con alimentos a quienes viven la angustia de esperar en hospitales es una forma de devolverles dignidad, recordándoles que no están solos y que su dolor es comprendido y valorado.",
       author: "Reflexión sobre dignidad humana"
     },
     {
       id: 4,
-      title: "El Altruismo como Medicina del Alma",
-      content: "Los médicos curan el cuerpo, las medicinas alivian el dolor, pero el altruismo sana el alma. Cuando actuamos desinteresadamente para el beneficio de otros, no solo transformamos sus vidas, sino que también transformamos las nuestras. Descubrimos que en el acto de dar, encontramos nuestro propósito más profundo.",
+      title: "Altruismo que Sana el Alma",
+      content: "La medicina puede curar cuerpos, pero el altruismo transforma corazones. Actuar con desinterés por otros nos conecta con nuestro propósito más profundo y nos hace comunidad.",
       author: "Reflexión filosófica"
     },
     {
       id: 5,
-      title: "Construyendo Puentes de Esperanza",
-      content: "Cada comida que llevamos es como construir un puente: un puente entre la soledad y la compañía, entre la desesperanza y la fe, entre el olvido y el recuerdo de que somos una comunidad que se cuida mutuamente. Estos puentes de esperanza conectan corazones y crean redes de apoyo que trascienden las circunstancias.",
+      title: "Construyendo Redes de Esperanza",
+      content: "Cada comida entregada es un puente de apoyo entre quienes sufren y quienes eligen acompañar. Creamos redes de solidaridad que fortalecen el tejido humano en los momentos más difíciles.",
       author: "Meditación sobre comunidad"
     }
   ];
@@ -68,15 +68,14 @@ const Reflexiones = () => {
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">Reflexiones del Corazón</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Estos pensamientos nacen de nuestras experiencias compartidas, 
-              de los momentos vividos y de la profunda convicción de que el amor 
-              puede transformar cualquier circunstancia.
+              Estos pensamientos nacen de nuestras experiencias acompañando a quienes esperan en los hospitales, 
+              y de la certeza de que un acto de amor puede cambiar la experiencia de quienes viven momentos difíciles.
             </p>
           </div>
         </div>
 
         <div className="max-w-4xl mx-auto space-y-8">
-          {reflections.map((reflection, index) => (
+          {reflections.map((reflection) => (
             <Card key={reflection.id} className="bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-300">
               <CardContent className="p-8">
                 <div className="flex items-start space-x-4">
@@ -105,13 +104,11 @@ const Reflexiones = () => {
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold text-gray-800 mb-4">Una Invitación a la Reflexión</h3>
               <p className="text-gray-700 leading-relaxed mb-6">
-                Te invitamos a reflexionar sobre el poder transformador del altruismo. 
-                Cada acto de bondad, por pequeño que parezca, tiene el potencial de 
-                cambiar una vida, de iluminar un día oscuro, de recordarnos que 
-                la humanidad es hermosa cuando elegimos amarnos unos a otros.
+                Te invitamos a recordar que acompañar a quienes sufren con gestos simples, como llevar comida, 
+                es un acto de amor que fortalece nuestra humanidad y nos conecta en comunidad.
               </p>
               <p className="text-gray-600 italic">
-                "El altruismo no es solo dar, es reconocer en el otro una parte de nosotros mismos."
+                "En cada alimento entregado, hay un puente de esperanza tendido entre corazones."
               </p>
             </CardContent>
           </Card>

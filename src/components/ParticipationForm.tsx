@@ -1,6 +1,12 @@
-import React, { useState } from 'react';
-import emailjs from '@emailjs/browser';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -12,48 +18,33 @@ interface ParticipationFormProps {
 }
 
 const ParticipationForm = ({ open, onOpenChange }: ParticipationFormProps) => {
-  const [formData, setFormData] = useState({
-    nombre: '',
-    correo: ''
-  });
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const currentDateTime = new Date().toLocaleString('es-MX', {
-      dateStyle: 'medium',
-      timeStyle: 'short'
-    });
-
-    const templateParams = {
-      name: formData.nombre,
-      email: formData.correo,
-      time: currentDateTime
-    };
+    if (!formRef.current) return;
 
     emailjs
-      .send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID!,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID!,
-        templateParams,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY!
+      .sendForm(
+        "service_hbgjggh", // Reemplaza con tu Service ID
+        "template_8rgqtus", // Reemplaza con tu Template ID
+        formRef.current,
+        "P-x9o59hmqphPO8ET" // Reemplaza con tu Public Key
       )
       .then(() => {
-        alert('¡Gracias por querer participar! Te contactaremos pronto.');
-        setFormData({ nombre: '', correo: '' });
+        alert("¡Gracias por querer participar! Te contactaremos pronto.");
+        formRef.current?.reset();
         onOpenChange(false);
       })
       .catch((error) => {
-        console.error('Error al enviar el correo:', error);
-        alert('Ocurrió un error. Intenta más tarde.');
+        console.error("Error al enviar el formulario:", error);
+        alert(
+          `Ocurrió un error al enviar el formulario: ${
+            error.text || error.message || error
+          }`
+        );
       });
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
   };
 
   return (
@@ -65,52 +56,53 @@ const ParticipationForm = ({ open, onOpenChange }: ParticipationFormProps) => {
             Únete a Corazones Solidarios
           </DialogTitle>
           <DialogDescription>
-            Ingresa tus datos para formar parte de nuestra causa y recibir información sobre cómo participar.
+            Ingresa tus datos para formar parte de nuestra causa y recibir
+            información sobre cómo participar.
           </DialogDescription>
         </DialogHeader>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="nombre">Nombre completo</Label>
+            <Label htmlFor="name">Nombre completo</Label>
             <Input
-              id="nombre"
-              name="nombre"
+              id="name"
+              name="name"
               type="text"
               placeholder="Tu nombre completo"
-              value={formData.nombre}
-              onChange={handleChange}
               required
               className="w-full"
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="correo">Correo electrónico</Label>
+            <Label htmlFor="email">Correo electrónico</Label>
             <Input
-              id="correo"
-              name="correo"
+              id="email"
+              name="email"
               type="email"
               placeholder="tu@correo.com"
-              value={formData.correo}
-              onChange={handleChange}
               required
               className="w-full"
             />
           </div>
 
+          {/* Campo oculto para la fecha y hora */}
+          <input
+            type="hidden"
+            name="time"
+            value={new Date().toLocaleString("es-MX")}
+          />
+
           <div className="flex gap-3 pt-4">
-            <Button 
-              type="button" 
-              variant="outline" 
+            <Button
+              type="button"
+              variant="outline"
               onClick={() => onOpenChange(false)}
               className="flex-1"
             >
               Cancelar
             </Button>
-            <Button 
-              type="submit" 
-              className="flex-1 bg-red-500 hover:bg-red-600"
-            >
+            <Button type="submit" className="flex-1 bg-red-500 hover:bg-red-600">
               Enviar
             </Button>
           </div>
