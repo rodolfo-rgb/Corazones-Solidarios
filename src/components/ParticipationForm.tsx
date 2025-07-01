@@ -31,16 +31,22 @@ const ParticipationForm = ({ open, onOpenChange }: ParticipationFormProps) => {
       time: currentDateTime
     };
 
-    
-      .then(() => {
-        alert('¡Gracias por querer participar! Te contactaremos pronto.');
-        setFormData({ nombre: '', correo: '' });
-        onOpenChange(false);
-      })
-      .catch((error) => {
-        console.error('Error al enviar el correo:', error);
-        alert('Ocurrió un error. Intenta más tarde.');
-      });
+    // Llaves puestas directamente
+    emailjs.send(
+      'service_hbgjggh',   
+      'template_8rgqtus',  
+      templateParams,
+      'P-x9o59hmqphPO8ET'      
+    )
+    .then(() => {
+      alert('¡Gracias por querer participar! Te contactaremos pronto.');
+      setFormData({ nombre: '', correo: '' });
+      onOpenChange(false);
+    })
+    .catch((error) => {
+      console.error('Error al enviar el correo:', error);
+      alert('Ocurrió un error. Intenta más tarde.');
+    });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
